@@ -1,277 +1,311 @@
 ---
 name: regulatory-change-impact
-description: Analyze and explain the impact of regulatory rule changes on financial institution operations, risk management, and capital requirements. Use when interpreting new regulations, final rules, NPRMs, supervisory guidance, or assessing compliance implementation requirements for banking, capital markets, or insurance entities.
+description: Assess and explain the business impact of regulatory changes on CPG operations, including FDA labeling rules, state-level regulations, environmental mandates, and trade policy changes. Use when a new regulation is proposed or enacted, when assessing compliance timelines and costs, or when preparing regulatory impact briefs for leadership.
 
 metadata:
   display_name: "Regulatory Change Impact"
-  short_description: "Assess regulatory rule change impact on bank operations"
-  default_prompt: "Analyze my banking regulatory change impact and recommend clear next actions"
+  short_description: "Assess regulatory change impact on CPG business operations"
+  default_prompt: "Check my cpg regulatory change impact for gaps risks and required fixes"
   version: "1.0.0"
   tags:
-    - financial-services
+    - cpg-retail
   icon_path: "assets/icon.png"
 ---
 
-# Regulatory Change Impact Analysis
+# Regulatory Change Impact Assessment
 
 ## Overview
 
-This skill produces structured impact assessments of regulatory changes affecting financial institutions. It covers federal and state banking regulations, prudential standards (Basel III/IV, capital, liquidity), consumer protection rules, BSA/AML requirements, and supervisory guidance from the OCC, Federal Reserve, FDIC, CFPB, SEC, and state regulators. The output maps regulatory changes to affected business lines, systems, policies, and capital requirements.
+Translate regulatory changes into business impact assessments for CPG operations. This skill evaluates new or proposed regulations across operational, financial, legal, and competitive dimensions to produce actionable impact briefs that enable informed decision-making by leadership. Covers FDA, FTC, EPA, CPSC, USDA, state-level laws, and international regulations affecting CPG products.
 
 ## When to Use
 
-- Analyzing newly issued final rules, interim final rules, or proposed rules (NPRMs)
-- Assessing supervisory guidance (SR letters, OCC bulletins, FDIC FILs)
-- Evaluating the impact of consent orders or enforcement actions on peer institutions
-- Mapping regulatory changes to internal policies, procedures, and controls
-- Estimating capital, liquidity, or operational cost impacts of rule changes
-- Preparing board or senior management briefings on regulatory developments
-- Supporting comment letter drafting for proposed rules
+- New FDA labeling or ingredient regulation (e.g., front-of-pack labeling, HFSS restrictions)
+- State-level law changes (e.g., Proposition 65 updates, EPR laws, bottle bills)
+- Environmental/sustainability regulations (e.g., packaging mandates, carbon reporting)
+- Trade policy changes (tariffs, import restrictions, country-of-origin labeling)
+- FTC enforcement shifts (Green Guides updates, advertising standard changes)
+- International regulation affecting export markets (EU, UK, APAC requirements)
+- Pre-rulemaking public comment preparation
+- Annual regulatory landscape scan and prioritization
 
 ## Required Inputs
 
 | Input | Description | Format |
 |-------|-------------|--------|
-| Regulatory text | Final rule, NPRM, guidance, or bulletin | Full text or Federal Register citation |
-| Issuing agency | OCC, Fed, FDIC, CFPB, SEC, FinCEN, state | Agency identification |
-| Institution profile | Asset size, charter type, business lines, complexity | Institutional context |
-| Current compliance state | Existing policies, systems, controls for affected area | Gap baseline |
-| Effective/compliance dates | Implementation timeline and phase-in periods | Date schedule |
-| Peer analysis (optional) | How similarly situated institutions are responding | Industry intelligence |
+| Regulation details | Full text or summary of the regulation | Document, link, or summary |
+| Product portfolio | Products potentially affected | SKU/brand list with attributes |
+| Current compliance status | How current operations align (or don't) with new requirements | Assessment |
+| Geographic scope | Markets where the regulation applies | State/country list |
+| Revenue exposure | Revenue from affected products in affected markets | $ by product/market |
+| Compliance timeline | Effective date and key milestones | Dates |
+| Industry intelligence | How competitors/industry are responding | Optional context |
 
 ## Methodology
 
-### Step 1: Parse the Regulatory Change
+### Step 1: Regulation Deconstruction
 
-Deconstruct the regulatory issuance into actionable components:
+Break the regulation into its component requirements:
 
-1. **Identify the rule type**: Final rule, interim final rule, NPRM (proposed), guidance (non-binding), FAQ, or enforcement action
-2. **Determine applicability**: Asset size thresholds, charter type, activity triggers, de minimis exemptions
-3. **Extract key provisions**: New requirements, modified requirements, eliminated requirements
-4. **Map effective dates**: Publication date, effective date, compliance date(s), phase-in schedule
-5. **Identify related rules**: Cross-references to existing regulations that are amended or superseded
+```
+Regulation: [Name / Citation]
+Issuing Authority: [FDA, FTC, EPA, State, etc.]
+Status: [Proposed Rule / Final Rule / Effective / Enforcement Date]
+Key Dates:
+  - Published: [Date]
+  - Comment period closes: [Date] (if proposed)
+  - Effective date: [Date]
+  - Enforcement date: [Date]
+  - Full compliance deadline: [Date]
 
-### Step 2: Assess Institutional Applicability
+Requirement Breakdown:
+1. [Specific requirement 1 — what must you do?]
+2. [Specific requirement 2]
+3. [Specific requirement 3]
 
-Determine whether and how the rule applies to the institution:
+Applicability Criteria:
+  - Product types covered: [Categories, ingredients, claims]
+  - Company size thresholds: [Revenue, employee count if applicable]
+  - Geographic scope: [Federal, state-specific, international]
+  - Exemptions: [Any exemptions that might apply]
+```
 
-| Factor | Assessment | Impact |
-|--------|-----------|--------|
-| Asset size threshold | Above / below / near threshold | Full / exempt / monitor |
-| Activity trigger | Engaged in covered activities? | Direct / indirect / none |
-| Charter type | National bank, state member, savings, BHC | Applicability determination |
-| Complexity category | Category I-IV (tailoring framework) | Requirements may vary |
-| Subsidiary/affiliate | Consolidated vs. entity-level application | Scope determination |
+### Step 2: Portfolio Exposure Assessment
 
-For institutions near thresholds, assess the likelihood of crossing during the phase-in period and recommend proactive compliance.
+Map the regulation's requirements against your product portfolio:
 
-### Step 3: Map Impacts by Domain
+**Product Impact Matrix:**
+| Product/Brand | Affected? | Requirement Gap | Compliance Effort | Revenue Exposed |
+|--------------|-----------|----------------|-------------------|----------------|
+| Brand A, SKU 1 | Yes | Reformulation needed | High | $XM |
+| Brand A, SKU 2 | Yes | Label change only | Medium | $XM |
+| Brand B | No | Exempt (category) | None | — |
+| Brand C | Partial | Packaging change | Low | $XM |
 
-Systematically assess impact across eight operational domains:
+**Exposure Summary:**
+```
+Total Portfolio Revenue:                    $XXM
+Revenue from Affected Products:             $XXM (XX% of total)
+Revenue from Products Requiring Changes:    $XXM (XX% of total)
+Revenue at Risk (if non-compliant):         $XXM
+```
 
-**1. Capital and Liquidity**
-- Risk-weighted asset (RWA) changes under standardized and advanced approaches
-- Capital ratio impact (CET1, Tier 1, Total Capital, leverage)
-- Liquidity coverage ratio (LCR) and net stable funding ratio (NSFR) effects
-- Stress capital buffer (SCB) implications
-- Output floor phase-in impact (Basel IV 72.5% floor)
+### Step 3: Operational Impact Assessment
 
-**2. Risk Management**
-- Model changes required (credit, market, operational risk models)
-- Risk appetite statement updates
-- Limit framework modifications
-- New risk metrics or reporting requirements
+Evaluate the operational changes required across the value chain:
 
-**3. Compliance and Legal**
-- Policy and procedure updates required
-- Training requirements for affected staff
-- Compliance monitoring and testing program changes
-- Legal opinion requirements
+| Function | Impact Area | Change Required | Effort | Timeline |
+|----------|-----------|----------------|--------|----------|
+| R&D/Product Development | Reformulation | Modify X ingredients/formulas | High/Med/Low | X months |
+| Regulatory Affairs | Registration/filing | Submit X registrations/notifications | High/Med/Low | X months |
+| Packaging/Design | Label redesign | Update X SKU labels/packaging | High/Med/Low | X months |
+| Supply Chain | Sourcing | Qualify X new suppliers/ingredients | High/Med/Low | X months |
+| Manufacturing | Production | Modify X processes/lines | High/Med/Low | X months |
+| Quality | Testing | Implement X new test protocols | High/Med/Low | X months |
+| Marketing | Claims | Revise X marketing materials/claims | High/Med/Low | X months |
+| Legal | Contracts | Update X supplier/retailer agreements | High/Med/Low | X months |
+| Sales | Retailer communication | Brief X retail partners | Low | X weeks |
 
-**4. Technology and Data**
-- System changes for calculation, reporting, or monitoring
-- Data collection and quality requirements
-- Regulatory reporting form changes (Call Report, FR Y-9C, FR Y-14)
-- Vendor system updates needed
+### Step 4: Financial Impact Quantification
 
-**5. Operations**
-- Process changes for affected business activities
-- Staffing impact (new roles, additional FTEs)
-- Customer-facing process modifications
-- Third-party relationship management changes
+Calculate the total cost of compliance and non-compliance:
 
-**6. Financial Reporting**
-- Accounting treatment changes (GAAP/IFRS impact)
-- Disclosure requirement modifications (10-K, 10-Q, proxy)
-- Call Report or regulatory filing changes
-- Investor communication requirements
+**Cost of Compliance:**
+```
+One-Time Costs:
+  Reformulation/R&D:           $XXK (ingredient testing, stability studies)
+  Packaging redesign:          $XXK (design, plate changes, obsolete inventory)
+  Regulatory filings:          $XXK (registration fees, consultant costs)
+  System updates:              $XXK (ERP, labeling systems)
+  Employee training:           $XXK
+  Legal review:                $XXK
+  Total One-Time:              $XXK
 
-**7. Business Strategy**
-- Product or service modifications needed
-- Pricing adjustments to reflect new costs
-- Market exit or entry considerations
-- Competitive positioning impact
+Ongoing Annual Costs:
+  Ingredient cost changes:     $XXK/year (reformulated products)
+  Testing/certification:       $XXK/year (ongoing compliance testing)
+  Reporting/documentation:     $XXK/year (regulatory submissions)
+  Total Annual:                $XXK/year
 
-**8. Governance**
-- Board reporting and approval requirements
-- Committee charter modifications
-- Management reporting changes
-- Audit committee considerations
+3-Year Total Compliance Cost:  $XXK
+```
 
-### Step 4: Quantify the Impact
+**Cost of Non-Compliance:**
+```
+Penalties:
+  Per-violation fine:          $XX (cite maximum penalty)
+  Estimated violations:        XX per year
+  Annual penalty exposure:     $XXK
 
-Where possible, provide quantitative estimates:
-- Capital impact in basis points of CET1 and dollar terms
-- Compliance cost estimate (one-time implementation + ongoing annual)
-- Revenue impact from business model changes
-- FTE requirements for implementation and ongoing compliance
-- Technology investment estimate (build vs. buy vs. vendor upgrade)
-- Timeline: months to implement with critical path milestones
+Business Impact:
+  Product seizure/injunction risk:    $XXM (revenue from non-compliant products)
+  Retailer delisting risk:            $XXM (retailers requiring compliance)
+  Consumer litigation exposure:       $XXM (class action risk)
+  Reputational damage:                Qualitative — brand trust erosion
 
-### Step 5: Develop Implementation Roadmap
+Total Non-Compliance Exposure:        $XXM (annualized)
+Compliance ROI = Non-Compliance Cost / Compliance Cost = X.Xx
+```
 
-Create a phased implementation plan:
+### Step 5: Competitive and Strategic Impact
 
-**Phase 1 — Assessment (0-30 days)**:
-- Detailed gap analysis against current state
-- Stakeholder identification and RACI assignment
-- Budget and resource estimation
+Assess how the regulation affects competitive dynamics:
 
-**Phase 2 — Design (30-90 days)**:
-- Policy and procedure drafting
-- System requirements specification
-- Data remediation planning
-- Training curriculum development
+**Competitive Analysis:**
+| Competitor | Likely Compliance Status | Speed to Market | Competitive Implication |
+|-----------|------------------------|----------------|----------------------|
+| Competitor A | Already compliant (early mover) | Immediate | May gain shelf space |
+| Competitor B | Similar position to us | 6-12 months | Neutral |
+| Private Label | May lag (resource constraints) | 12-18 months | Opportunity for branded |
+| New Entrants | Born compliant | Immediate | Lower barrier for compliant brands |
 
-**Phase 3 — Implementation (90-270 days)**:
-- System development, configuration, or procurement
-- Policy approval through governance
-- Staff training delivery
-- Parallel testing of new processes
+**Strategic Implications:**
+```
+1. First-mover advantage: Is there a benefit to early compliance?
+2. Market share shift: Will non-compliant competitors lose share?
+3. Innovation catalyst: Does the regulation enable differentiation?
+4. Barrier to entry: Does compliance complexity favor incumbents?
+5. Consumer perception: Will compliance enhance brand trust?
+```
 
-**Phase 4 — Validation (270-365 days)**:
-- Compliance testing and gap closure
-- Internal audit review
-- Regulatory filing dry runs
-- Board attestation preparation
+### Step 6: Timeline and Action Planning
 
-### Step 6: Identify Risks and Dependencies
+Build a compliance roadmap:
 
-Document implementation risks:
-- Vendor readiness for system changes
-- Data availability and quality for new requirements
-- Competing regulatory projects consuming same resources
-- Interpretive uncertainty requiring legal or regulatory clarification
-- Industry comment period outcomes that may modify final requirements
+```
+Compliance Roadmap:
 
-### Step 7: Prepare Stakeholder Communication
+Phase 1: Assessment (Weeks 1-4)
+  □ Complete portfolio impact assessment
+  □ Identify reformulation needs
+  □ Quantify financial impact
+  □ Brief leadership
 
-Tailor the message by audience:
-- **Board**: Strategic impact, capital implications, resource commitment, timeline
-- **Senior management**: Operational impact, budget request, project governance
-- **Business lines**: Product and process changes, customer communication needs
-- **Regulators**: Implementation plan, timeline commitment, resource allocation
-- **External stakeholders**: Investor impact, public disclosure requirements
+Phase 2: Planning (Weeks 5-12)
+  □ Develop reformulation roadmap
+  □ Begin label redesign
+  □ Engage regulatory counsel
+  □ File public comments (if proposed rule)
+
+Phase 3: Execution (Months 4-X)
+  □ Execute reformulations with stability testing
+  □ Produce new labels/packaging
+  □ Update marketing materials
+  □ Train relevant teams
+
+Phase 4: Validation (Months X-Y)
+  □ Verify compliance across all affected SKUs
+  □ Conduct internal audit
+  □ Document compliance evidence
+  □ Communicate to retailers/partners
+
+Phase 5: Ongoing Monitoring
+  □ Monitor regulatory updates and guidance documents
+  □ Track industry enforcement actions
+  □ Maintain compliance documentation
+  □ Annual compliance re-certification
+```
+
+### Step 7: Public Comment Strategy (if Proposed Rule)
+
+If the regulation is still in the proposed rule stage:
+
+```
+Comment Strategy Assessment:
+  1. Does the proposed rule have a significant business impact? (>$100K)
+  2. Are there specific provisions that are overly burdensome or unclear?
+  3. Does the company have data or evidence that supports modification?
+  4. Are industry associations filing coordinated comments?
+  5. Is direct company comment submission appropriate in addition to trade association?
+
+Comment Priorities:
+  - [Provision A]: Request [specific modification] because [data-backed rationale]
+  - [Provision B]: Support as written — aligns with our current practices
+  - [Provision C]: Request extended compliance timeline due to [reason]
+```
 
 ## Output Specification
 
 ```markdown
-# Regulatory Change Impact Assessment
+# Regulatory Impact Assessment — [Regulation Name]
 
-## Rule Summary
-- **Regulation**: [Name and citation]
-- **Issuing Agency**: [Agency]
-- **Rule Type**: [Final / NPRM / Guidance]
-- **Publication Date**: [Date]
-- **Effective Date**: [Date]
-- **Compliance Date**: [Date(s) with phase-in]
+## Executive Summary
+**Regulation**: [Name and citation]
+**Status**: [Proposed / Final / Effective]
+**Compliance Deadline**: [Date]
+**Revenue Exposed**: $XM (XX% of portfolio)
+**Estimated Compliance Cost**: $XK (one-time) + $XK/year (ongoing)
+**Recommended Action**: [Comply by X date / Comment on proposed rule / Seek exemption]
 
-## Applicability Determination
-- **Applicable**: [Yes / No / Partial]
-- **Basis**: [Asset size, activity, charter type]
-- **Tailoring Category**: [I-IV, if applicable]
+## Regulation Summary
+[Plain-language summary of what the regulation requires]
 
-## Impact Summary
-| Domain | Impact Level | Key Changes | Estimated Cost |
-|--------|-------------|-------------|----------------|
-| Capital & Liquidity | [High/Med/Low/None] | [Summary] | [$X] |
-| Risk Management | [High/Med/Low/None] | [Summary] | [$X] |
-| Compliance & Legal | [High/Med/Low/None] | [Summary] | [$X] |
-| Technology & Data | [High/Med/Low/None] | [Summary] | [$X] |
-| Operations | [High/Med/Low/None] | [Summary] | [$X] |
-| Financial Reporting | [High/Med/Low/None] | [Summary] | [$X] |
-| Business Strategy | [High/Med/Low/None] | [Summary] | [$X] |
-| Governance | [High/Med/Low/None] | [Summary] | [$X] |
+## Portfolio Exposure
+[Product impact matrix showing affected SKUs/brands with revenue exposure]
 
-## Capital Impact Analysis
-- **CET1 Impact**: [+/- X bps]
-- **RWA Change**: [$XM]
-- **Binding Constraint Change**: [Yes/No, which ratio]
+## Operational Impact
+[Function-by-function assessment of required changes]
 
-## Implementation Roadmap
-| Phase | Activities | Timeline | Owner |
-|-------|-----------|----------|-------|
-| Assessment | [Activities] | [Dates] | [Team] |
-| Design | [Activities] | [Dates] | [Team] |
-| Implementation | [Activities] | [Dates] | [Team] |
-| Validation | [Activities] | [Dates] | [Team] |
+## Financial Impact
+### Compliance Costs
+[One-time and ongoing cost breakdown]
 
-## Risks and Open Items
-- [Risk/dependency with mitigation plan]
+### Non-Compliance Exposure
+[Penalties, business risk, and litigation exposure]
 
-## Recommendation
-[Executive recommendation on approach, urgency, and resource commitment]
+### Compliance ROI
+[Cost of compliance vs cost of non-compliance]
+
+## Competitive Implications
+[Competitor readiness assessment and strategic opportunities/threats]
+
+## Compliance Roadmap
+[Phased timeline with milestones, owners, and dependencies]
+
+## Decisions Required
+1. [Decision with deadline, options, and recommendation]
+2. [Decision with deadline, options, and recommendation]
+
+## Monitoring Plan
+[Ongoing tracking of regulatory developments and compliance status]
 ```
 
 ## Analysis Framework
 
-### Regulatory Change Classification
+**Regulatory Impact Severity Matrix:**
+| | Low Revenue Exposure (<5%) | High Revenue Exposure (>5%) |
+|---|--------------------------|---------------------------|
+| Low Compliance Cost (<$100K) | Monitor | Comply promptly |
+| High Compliance Cost (>$100K) | Cost-benefit analysis needed | Strategic priority — board-level decision |
 
-Categorize the change by urgency and complexity:
+## Example
 
-| Complexity \ Urgency | Immediate (<90 days) | Near-term (90-365 days) | Long-term (>1 year) |
-|----------------------|---------------------|------------------------|---------------------|
-| **Low** (policy update) | Expedite | Standard process | Monitor |
-| **Medium** (system + process) | Escalate for resources | Project charter | Plan and budget |
-| **High** (capital/strategic) | Executive escalation | Major program | Strategic planning |
+**Input**: "FDA is proposing mandatory front-of-pack nutrition labeling showing added sugar, sodium, and saturated fat with a 'high in' warning symbol. Comment period closes in 60 days."
 
-### Cross-Rule Interaction Analysis
-
-Assess how the new rule interacts with existing requirements:
-- Does it modify or supersede existing regulations?
-- Does it create conflicts with state-level requirements?
-- How does it interact with other pending proposals?
-- Are there cross-border implications (EU CRD VI, UK PRA)?
-
-## Examples
-
-**Example 1 — Basel III Endgame (Capital Rule)**:
-"The Basel III Endgame final rule (effective [date]) eliminates the advanced approaches for credit risk and introduces an expanded risk-based approach (ERBA). For our institution ($85B total assets, Category III), the impact assessment shows: CET1 ratio decline of approximately 45 bps under the ERBA due to higher RWA for operational risk (standardized measurement approach) and removal of internal models benefit for credit risk. The output floor phases in at 55% (year 1) to 72.5% (year 5). Technology impact is High: the risk engine requires recalibration for standardized credit risk weights, and a new operational risk capital calculation module must be implemented. Estimated implementation cost: $4.2M one-time, $1.1M annually. Compliance date: July 2026 with 3-year transition."
-
-**Example 2 — CRA Modernization**:
-"The interagency CRA final rule modernizes Community Reinvestment Act evaluation for banks above $2B in assets. Impact: our institution must now track and report retail lending and community development activities in assessment areas defined by both branch presence and lending concentration. Technology impact is High: geocoding of all retail loans against new assessment area definitions, new data fields for community development classification. Operations impact is Medium: CRA officer staffing model requires 2 additional FTEs for expanded data collection. Timeline: data collection effective January 2027, first evaluation under new framework 2028."
+**Analysis excerpt**:
+> "**Revenue exposed: $145M (62% of portfolio)** across 84 SKUs that would trigger at least one 'high in' warning symbol based on proposed thresholds. **Cost of compliance**: $380K one-time (label redesign for 84 SKUs, 12 requiring reformulation) + $120K/year ongoing (reformulation ingredient costs). **Cost of non-compliance**: Estimated $2.1M penalty exposure + probable retailer enforcement ahead of FDA (Walmart and Target have historically required early adoption). **Strategic opportunity**: 28 SKUs (22% of portfolio revenue) would carry zero warning symbols, creating a marketing advantage if competitors' products are flagged. **Recommended actions**: (1) File public comment within 45 days requesting 24-month compliance timeline (vs proposed 18 months) and threshold adjustments on added sugar from 6.5g to 10g based on serving size rationalization. (2) Begin immediate reformulation of top 5 SKUs by revenue to remove 'high in' designation. (3) Develop 'better-for-you' marketing strategy for compliant SKUs."
 
 ## Guidelines
 
-- Distinguish between binding rules and non-binding guidance (supervisory expectations vs. legal requirements)
-- For NPRMs, note that requirements may change and assess the range of possible outcomes
-- Always identify phase-in periods and transitional provisions
-- Reference specific regulatory text sections to support impact statements
-- Assess both direct costs and indirect strategic impacts
-- Consider competitive implications (does the rule advantage or disadvantage certain business models?)
-- Flag any provisions requiring legal interpretation or regulatory clarification
-- Include sunset provisions or periodic review requirements
-- Track related industry comment letters and agency responses for interpretive context
+- Always translate regulation into business impact — leadership needs "so what," not legal text
+- Quantify both compliance cost and non-compliance cost to frame the decision
+- Include competitive analysis — regulations create winners and losers
+- For proposed rules, always assess the public comment opportunity
+- Track regulatory trajectory, not just current status — where is this heading?
+- Distinguish between what's required and what's recommended (guidance vs mandate)
+- Identify interdependencies between regulations (e.g., state laws vs federal preemption)
+- This is a business impact assessment, not legal compliance guidance — involve legal counsel
 
 ## Validation Checklist
 
-- [ ] Regulatory citation is complete and accurate (CFR part, section, Federal Register page)
-- [ ] Applicability determination considers all relevant thresholds and triggers
-- [ ] All eight impact domains are assessed (even if impact is "None")
-- [ ] Capital impact is quantified in basis points and dollar terms where applicable
-- [ ] Implementation roadmap aligns with regulatory compliance dates
-- [ ] Cost estimates distinguish one-time from recurring expenses
-- [ ] Cross-rule interactions and dependencies are identified
-- [ ] Stakeholder communications are tailored by audience
-- [ ] Risks and open items have assigned owners and mitigation plans
-- [ ] Assessment is reviewed by legal and compliance before distribution
+- [ ] Regulation deconstructed into specific requirements with key dates
+- [ ] Portfolio exposure quantified by SKU/brand with revenue at risk
+- [ ] Operational impact assessed across all relevant functions
+- [ ] Compliance costs quantified (one-time and ongoing)
+- [ ] Non-compliance costs quantified (penalties, business risk, litigation)
+- [ ] Compliance ROI calculated
+- [ ] Competitive impact assessed with competitor readiness evaluation
+- [ ] Compliance roadmap built with phased milestones and owners
+- [ ] Public comment strategy defined (if proposed rule)
+- [ ] Decisions required clearly stated with deadlines and recommendations
+- [ ] Monitoring plan established for ongoing regulatory developments
