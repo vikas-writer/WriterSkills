@@ -6,7 +6,7 @@ metadata:
   display_name: "Regulatory Change Impact"
   short_description: "Assess regulatory change impact on CPG business operations"
   default_prompt: "Check my cpg regulatory change impact for gaps risks and required fixes"
-  version: "1.0.0"
+  version: "1.0.1"
   tags:
     - cpg-retail
   icon_path: "assets/icon.png"
